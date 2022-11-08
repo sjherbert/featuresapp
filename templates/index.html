@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  
+</head>
+
+<body>
+ <div class="login">
+	<h1>Features of Top Trending Apps</h1>
+
+   <form action="{{ url_for('predict')}}"method="post">
+	<label for="Category">AppCategory</label>
+	<select id="Category" name="Category">
+	<option value="0">Arts&design</option>
+	<option value="1">Auto&Vehicles</option>	
+	<option value="2">Beauty</option>
+	<option value="3">Books&Reference</option>
+	<option value="4">Business</option>
+	<option value="5">Comics</option>
+	<option value="6">Communication</option>
+	<option value="7">Dating</option>
+	<option value="8">Education</option>
+	<option value="9">Entertainment</option>
+	<option value="10">Events</option>
+	<option value="11">Finance</option>
+	<option value="12">Food&Drink</option>
+	<option value="13">Health&Fitness</option>
+	<option value="14">House&Home</option>
+	<option value="15">Libraries&Demo</option>
+	<option value="16">Lifestyle</option>
+	<option value="17">Maps&Navigation</option>
+	<option value="18">Medical</option>
+	<option value="19">Music&Audio</option>
+	<option value="20">News&Magazines</option>
+	<option value="21">Parenting</option>
+	<option value="22">Personalization</option>
+	<option value="23">Photography</option>
+	<option value="24">Productivity</option>
+	<option value="25">Shopping</option>
+	<option value="26">Social</option>
+	<option value="27">Sports</option>
+	<option value="28">Tools</option>
+	<option value="29">Travel&Local</option>
+	<option value="30">Video Players & Editors</option>
+	<option value="31">Weather</option>
+	</select>
+	<br>
+	<button type="submit" class="btn btn-primary btn-block btn-large">Submit</button>
+   </form>
+
+  <br>
+  <br>
+  {{ prediction_text }}
+
+ </div>
+
+</body>
+</html>
